@@ -10,8 +10,11 @@ export default class Homepage extends React.Component {
     state = {images: [], likes: 0, dislikes: 0 ,currImage:''}
 
     getNextImage = () => {
+        console.log('get next image!')
         const imagesArrCopy = [...this.state.images]
+        console.log('images array copy: ',imagesArrCopy)
         const nextImage = imagesArrCopy.pop()
+        console.log('next imgae: ', nextImage)
         this.setState({images: imagesArrCopy, currImage:nextImage})
     }
 
@@ -38,22 +41,20 @@ export default class Homepage extends React.Component {
 
 
     incrementCounter = (counter) => {
-        this.setState( prevState => {
-            return { [counter] : prevState[counter]+1}
-        })
-        console.log('state after updating counter: ', this.state)
+        if (this.state.images.length > 0){
+
+            this.setState( prevState => {
+                return { [counter] : prevState[counter]+1}
+            })
+        }
     }
 
     render(){
-        return <div>
-            <CountersBar />
+        return <div className='homepage-container'>
+            <CountersBar likes={this.state.likes} dislikes={this.state.dislikes} />
             {this.renderImage()}
-            <ButtonsBar renderNextImage={this.renderNextImage} 
-            incrementCounter={this.incrementCounter} 
+            <ButtonsBar incrementCounter={this.incrementCounter} 
             getNextImage={this.getNextImage} />
-
-            
-
         </div>
     }
 }

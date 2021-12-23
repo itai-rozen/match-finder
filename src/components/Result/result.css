@@ -1,0 +1,7 @@
+.result-container {
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

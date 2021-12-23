@@ -1,0 +1,6 @@
+.tinder-btn , i, button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin: 0 50px;
+}

@@ -2,7 +2,13 @@ import React from 'react'
 import './button.css'
 
 export default class Button extends React.Component {
+    handleClick = () => {
+        this.props.incrementCounter(this.props.counterType)
+        this.props.getNextImage()
+    }
+    
     render(){
-        return <button></button>
+        const iconClass = `far fa-${this.props.icon} fa-5x`
+        return <button className="tinder-btn" onClick={this.handleClick} className={this.props.icon}><i className={iconClass}></i></button>
     }
 }

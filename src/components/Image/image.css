@@ -1,3 +1,12 @@
+.image-container {
+    height: 50vh;
+    width: 50vw;
+}
 .match-img {
-    height: 300px;
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+}
+.img-description {
+    height: 10%;
 }
