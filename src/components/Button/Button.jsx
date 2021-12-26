@@ -9,6 +9,6 @@ export default class Button extends React.Component {
     
     render(){
         const iconClass = `far fa-${this.props.icon} fa-5x`
-        return <button className="tinder-btn" onClick={this.handleClick} className={this.props.icon}><i className={iconClass}></i></button>
+        return <button className="tinder-btn" onClick={this.handleClick}><i className={iconClass}></i></button>
     }
 }
